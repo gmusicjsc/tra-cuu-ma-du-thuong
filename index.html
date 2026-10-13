@@ -82,8 +82,10 @@
             border-radius: 4px;
             font-weight: bold;
             color: #007bff;
-            word-break: break-all;
+            line-height: 1.6;
             margin-top: 5px;
+            max-height: 200px;
+            overflow-y: auto;
         }
         #error-box {
             display: none;
@@ -139,7 +141,7 @@ function lookupCodes() {
     errorBox.style.display = 'none';
     loading.style.display = 'block';
     
-    // Thay URL_WEB_APP_CUA_BAN bằng link Google Apps Script đã deploy
+    // Thay URL_WEB_APP_CUA_BAN bằng link Google Apps Script chính xác của bạn
     var webAppUrl = 'https://script.google.com/macros/s/AKfycbzICXTGPV81OPstzh58RSbFQ83DRDMHxfPrpImjEfOiKSvtgmBF-i2yjn8-bzSRIpk7/exec?phone=' + encodeURIComponent(phone);
     
     fetch(webAppUrl)
@@ -150,16 +152,15 @@ function lookupCodes() {
                 document.getElementById('res-name').innerText = data.name;
                 document.getElementById('res-phone').innerText = data.phone;
                 
-                // Xử lý tách chuỗi mã dự thưởng thành mỗi mã 1 dòng theo dấu phẩy
-                var codesArray = data.codes.split(',').map(function(item) {
-                    return item.trim();
-                }).filter(function(item) {
-                    return item.length > 0;
-                });
+                // Tách chuỗi theo dấu phẩy và xuống dòng từng mã một hàng dọc
+                if (data.codes) {
+                    var codesArray = String(data.codes).split(',').map(item => item.trim()).filter(item => item.length > 0);
+                    document.getElementById('res-codes').innerHTML = codesArray.join('<br>');
+                } else {
+                    document.getElementById('res-codes').innerText = 'Không có mã nào';
+                }
                 
-                document.getElementById('res-codes').innerHTML = codesArray.join('<br>');
                 resultBox.style.display = 'block';
-            }
             } else {
                 errorBox.style.display = 'block';
             }
