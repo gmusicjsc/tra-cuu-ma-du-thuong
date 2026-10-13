@@ -31,7 +31,7 @@
             display: block;
         }
 
-        /* Định vị cho Desktop với thông số mới */
+        /* Định vị cho Desktop */
         .lookup-overlay {
             position: absolute;
             top: 50%; 
@@ -128,7 +128,7 @@
             border-radius: 4px;
         }
 
-        /* Tối ưu riêng cho Mobile */
+        /* Tối ưu riêng cho Mobile: Thu nhỏ ô nhập và nút bấm gọn gàng hơn */
         @media (max-width: 768px) {
             .lookup-overlay {
                 top: 50%;
@@ -137,15 +137,20 @@
                 transform: rotate(3.5deg);
             }
             input[type="text"] {
-                font-size: 12px;
-                padding: 8px 10px;
+                font-size: 10px;      /* Thu nhỏ cỡ chữ */
+                padding: 5px 8px;     /* Thu hẹp khoảng đệm */
+                border-width: 1.5px;
             }
             button {
-                font-size: 12px;
-                padding: 8px 12px;
+                font-size: 10px;      /* Thu nhỏ chữ nút Tra cứu */
+                padding: 5px 8px;     /* Thu gọn kích thước nút */
+                border-width: 1.5px;
+            }
+            .form-group {
+                gap: 4px;             /* Giảm khoảng cách giữa input và button */
             }
             #result-box p, #res-codes {
-                font-size: 12px;
+                font-size: 11px;
             }
         }
     </style>
