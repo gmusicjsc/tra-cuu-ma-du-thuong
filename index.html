@@ -149,8 +149,17 @@ function lookupCodes() {
             if (data.status === 'success') {
                 document.getElementById('res-name').innerText = data.name;
                 document.getElementById('res-phone').innerText = data.phone;
-                document.getElementById('res-codes').innerText = data.codes;
+                
+                // Xử lý tách chuỗi mã dự thưởng thành mỗi mã 1 dòng theo dấu phẩy
+                var codesArray = data.codes.split(',').map(function(item) {
+                    return item.trim();
+                }).filter(function(item) {
+                    return item.length > 0;
+                });
+                
+                document.getElementById('res-codes').innerHTML = codesArray.join('<br>');
                 resultBox.style.display = 'block';
+            }
             } else {
                 errorBox.style.display = 'block';
             }
