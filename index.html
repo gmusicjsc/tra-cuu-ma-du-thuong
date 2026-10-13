@@ -21,7 +21,7 @@
         .bg-container {
             position: relative;
             width: 100%;
-            max-width: 1055px; /* Khớp đúng chiều rộng gốc 1055px */
+            max-width: 1055px;
             margin: 0 auto;
         }
 
@@ -31,13 +31,14 @@
             display: block;
         }
 
-        /* Định vị cho ảnh tỉ lệ ngang 1055x800 */
+        /* Đã dịch top lên 47.5% để khớp với khung xéo trên ảnh */
         .lookup-overlay {
             position: absolute;
-            top: 51%;   /* Canh khoảng cách từ trên xuống cho vừa khít ô trắng */
-            left: 17%;  /* Canh lề trái */
-            width: 66%; /* Chiều rộng khung nhập liệu */
+            top: 47.5%; 
+            left: 17.5%;  
+            width: 65%; 
             padding: 5px;
+            transform: rotate(-0.5deg); /* Xoay nhẹ theo góc phối cảnh của khung */
         }
 
         .form-group {
@@ -129,7 +130,7 @@
         /* Responsive cho thiết bị di động */
         @media (max-width: 768px) {
             .lookup-overlay {
-                top: 49%;
+                top: 46%;
                 left: 14%;
                 width: 72%;
             }
