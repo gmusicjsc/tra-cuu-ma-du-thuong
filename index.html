@@ -21,6 +21,7 @@
         .bg-container {
             position: relative;
             width: 100%;
+            max-width: 1055px; /* Khớp đúng chiều rộng gốc của ảnh */
             margin: 0 auto;
         }
 
@@ -30,40 +31,40 @@
             display: block;
         }
 
-        /* Canh chỉnh vị trí form vừa khít vào ô trắng trên poster */
+        /* Định vị chính xác dựa trên kích thước 1055x1231 */
         .lookup-overlay {
             position: absolute;
-            top: 58%; 
-            left: 17%;
-            width: 66%;
+            top: 52.5%; /* Vị trí theo chiều dọc của ô trắng */
+            left: 17%;  /* Vị trí lề trái */
+            width: 66%; /* Chiều rộng khung nhập liệu */
             padding: 5px;
         }
 
         .form-group {
             display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         input[type="text"] {
             flex: 1;
-            padding: 10px 12px;
+            padding: 12px 14px;
             border: 2px solid #007bff;
             border-radius: 4px;
-            font-size: 15px;
+            font-size: 16px;
             outline: none;
             background: #ffffff;
             box-shadow: inset 2px 2px 4px rgba(0,0,0,0.05);
         }
 
         button {
-            padding: 10px 18px;
+            padding: 12px 22px;
             background-color: #007bff;
             color: white;
             border: 2px solid #0056b3;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
             transition: background 0.2s;
             white-space: nowrap;
@@ -77,71 +78,71 @@
             display: none;
             text-align: center;
             color: #333;
-            font-size: 13px;
-            margin-bottom: 6px;
+            font-size: 14px;
+            margin-bottom: 8px;
             font-weight: bold;
         }
 
         #result-box {
             display: none;
             background: rgba(255, 255, 255, 0.98);
-            padding: 10px;
+            padding: 14px;
             border-radius: 4px;
             border: 1px solid #007bff;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         #result-box p {
-            margin: 4px 0;
+            margin: 6px 0;
             color: #333;
-            font-size: 13px;
+            font-size: 15px;
         }
 
         #res-codes {
             background: #f8f9fa;
-            padding: 6px 8px;
+            padding: 8px 10px;
             border: 1px dashed #007bff;
             border-radius: 4px;
             font-weight: bold;
             color: #007bff;
             word-break: break-all;
-            margin-top: 4px;
-            line-height: 1.4;
-            max-height: 90px;
+            margin-top: 6px;
+            line-height: 1.5;
+            max-height: 120px;
             overflow-y: auto;
             font-family: monospace;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         #error-box {
             display: none;
             color: #d9534f;
             text-align: center;
-            margin-top: 6px;
+            margin-top: 8px;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 14px;
             background: rgba(255, 255, 255, 0.95);
-            padding: 6px;
+            padding: 8px;
             border-radius: 4px;
         }
 
-        /* Responsive cho Mobile */
+        /* Responsive cho thiết bị di động */
         @media (max-width: 768px) {
             .lookup-overlay {
-                top: 57.5%;
-                left: 14.5%;
-                width: 71%;
+                top: 52%;
+                left: 14%;
+                width: 72%;
             }
             input[type="text"] {
-                font-size: 12px;
-                padding: 6px 8px;
+                font-size: 13px;
+                padding: 8px 10px;
             }
             button {
-                font-size: 12px;
-                padding: 6px 10px;
+                font-size: 13px;
+                padding: 8px 12px;
             }
             #result-box p, #res-codes {
-                font-size: 12px;
+                font-size: 13px;
             }
         }
     </style>
