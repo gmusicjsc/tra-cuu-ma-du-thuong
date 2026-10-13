@@ -16,13 +16,14 @@
             height: 100%;
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
+            background-color: #0b1329;
         }
 
         /* Container chứa ảnh nền poster */
         .bg-container {
             position: relative;
             width: 100%;
-            max-width: 800px; /* Chiều rộng tối ưu khớp với poster */
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -32,10 +33,9 @@
             display: block;
         }
 
-        /* Khung chứa form nằm đè lên khoảng trắng của ảnh */
+        /* Khung chứa form nằm đè chuẩn xác vào ô trống màu trắng của ảnh */
         .lookup-overlay {
             position: absolute;
-            /* Các thông số top/left/width này canh chính xác vào khoảng trắng cửa sổ poster */
             top: 57%; 
             left: 17%;
             width: 66%;
@@ -127,7 +127,7 @@
             border-radius: 4px;
         }
 
-        /* Responsive cho điện thoại di động */
+        /* Responsive tinh chỉnh cho điện thoại di động */
         @media (max-width: 600px) {
             .lookup-overlay {
                 top: 55%;
@@ -144,8 +144,8 @@
 <body>
 
 <div class="bg-container">
-    <!-- THAY LINK ẢNH POSTER CỦA BẠN VÀO ĐÂY -->
-    <img src="URL_ANH_POSTER_CUA_BAN" alt="G.Music Level Up Background" class="poster-bg">
+    <!-- Dùng trực tiếp tên file ảnh đã up lên GitHub -->
+    <img src="Level-Up.jpg" alt="G.Music Level Up Background" class="poster-bg">
     
     <div class="lookup-overlay">
         <div class="form-group">
