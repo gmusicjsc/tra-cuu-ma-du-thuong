@@ -31,14 +31,14 @@
             display: block;
         }
 
-        /* Đã đổi sang góc xoay dương để xéo theo đúng chiều phối cảnh của khung */
+        /* Đã tăng góc xoay lên 2.2deg và dịch top xuống một chút */
         .lookup-overlay {
             position: absolute;
-            top: 47%; 
+            top: 48.5%; 
             left: 17.5%;  
             width: 65%; 
             padding: 5px;
-            transform: rotate(1.2deg); /* Xoay xuôi theo chiều khung ảnh */
+            transform: rotate(2.2deg); 
         }
 
         .form-group {
@@ -130,10 +130,10 @@
         /* Responsive cho thiết bị di động */
         @media (max-width: 768px) {
             .lookup-overlay {
-                top: 45.5%;
+                top: 47%;
                 left: 14%;
                 width: 72%;
-                transform: rotate(1.2deg);
+                transform: rotate(2.2deg);
             }
             input[type="text"] {
                 font-size: 13px;
