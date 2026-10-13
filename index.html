@@ -15,13 +15,12 @@
             width: 100%;
             height: 100%;
             font-family: 'Roboto', sans-serif;
-            background-color: #050b18;
+            background-color: transparent;
         }
 
         .bg-container {
             position: relative;
             width: 100%;
-            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -31,10 +30,10 @@
             display: block;
         }
 
-        /* Đã dịch chuyển 'top' xuống 64% để form khớp đúng vào ô trắng của cửa sổ */
+        /* Canh chỉnh vị trí form vừa khít vào ô trắng trên poster */
         .lookup-overlay {
             position: absolute;
-            top: 64%; 
+            top: 58%; 
             left: 17%;
             width: 66%;
             padding: 5px;
@@ -67,6 +66,7 @@
             font-size: 15px;
             cursor: pointer;
             transition: background 0.2s;
+            white-space: nowrap;
         }
 
         button:hover {
@@ -125,15 +125,23 @@
             border-radius: 4px;
         }
 
-        @media (max-width: 600px) {
+        /* Responsive cho Mobile */
+        @media (max-width: 768px) {
             .lookup-overlay {
-                top: 62%;
-                left: 14%;
-                width: 72%;
+                top: 57.5%;
+                left: 14.5%;
+                width: 71%;
             }
-            input[type="text"], button {
-                font-size: 13px;
-                padding: 8px 10px;
+            input[type="text"] {
+                font-size: 12px;
+                padding: 6px 8px;
+            }
+            button {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            #result-box p, #res-codes {
+                font-size: 12px;
             }
         }
     </style>
@@ -213,6 +221,7 @@ function lookupCodes() {
             alert('Đã xảy ra lỗi kết nối, vui lòng thử lại sau.');
             console.error('Error:', error);
         });
+}
 </script>
 
 </body>
