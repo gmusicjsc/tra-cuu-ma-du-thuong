@@ -140,7 +140,7 @@ function lookupCodes() {
     loading.style.display = 'block';
     
     // Thay URL_WEB_APP_CUA_BAN bằng link Google Apps Script đã deploy
-    var webAppUrl = 'https://script.google.com/macros/s/AKfycbzICXTGPV81OPstzh58RSbFQ83DRDMHxfPrpImjEfOiKSvtgmBF-i2yjn8-bzSRIpk7/exec' + encodeURIComponent(phone);
+    var webAppUrl = 'https://script.google.com/macros/s/AKfycbzICXTGPV81OPstzh58RSbFQ83DRDMHxfPrpImjEfOiKSvtgmBF-i2yjn8-bzSRIpk7/exec?phone=' + encodeURIComponent(phone);
     
     fetch(webAppUrl)
         .then(response => response.json())
